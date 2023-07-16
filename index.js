@@ -64,7 +64,7 @@ inquirer
         }
 
 
-        fs.writeFileSync(`${answers.text.toUpperCase().slice(0, 3)}.svg`, createLogo(answers, shape), (err) => {
+        fs.writeFileSync(`./logos/${answers.text.toUpperCase().slice(0, 3)}.svg`, createLogo(answers, shape), (err) => {
             if (err) {
                 console.error(err);
             } else {
@@ -76,7 +76,16 @@ inquirer
         console.error(err);
     })
 function createLogo(answers, shape) {
-
+    if (answers.shape === 'Square') {
+        xTextAlign = 100;
+        yTextAlign = 110;
+    } else if (answers.shape === 'Triangle') {
+        xTextAlign = 150;
+        yTextAlign = 140;
+    } else {
+        xTextAlign = 147;
+        yTextAlign = 117;
+    }
 
     return `<svg version="1.1"
     width="300" height="200"
@@ -84,7 +93,7 @@ function createLogo(answers, shape) {
   
     ${shape.render()}
   
-    <text x="150" y="125" font-size="55" text-anchor="middle" fill="${answers.textColor}">${answers.text.toUpperCase().slice(0, 3)}</text>
+    <text x="${xTextAlign}" y="${yTextAlign}" font-size="55" text-anchor="middle" fill="${answers.textColor}">${answers.text.toUpperCase().slice(0, 3)}</text>
   
     </svg>`;
 }
