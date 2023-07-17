@@ -29,7 +29,11 @@ Jacob McKitrick
 
 This application uses JEST for testing, to run the tests for this application, run $ npm run test, this will run the current shapes.test.js file.
 
+## Links
 
+link to repo: https://github.com/MCKIT77/svg-logo-generator
+
+link to video guide: https://drive.google.com/file/d/1rTPub3VndViqePv8ZZtQk6U25a3yPSrB/view
 
 ## Questions
 For any questions or inquiries, please contact me via GitHub or email:
