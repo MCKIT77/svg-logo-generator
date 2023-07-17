@@ -64,7 +64,7 @@ inquirer
         }
 
 
-        fs.writeFileSync(`./logos/${answers.text.toUpperCase().slice(0, 3)}.svg`, createLogo(answers, shape), (err) => {
+        fs.writeFile(`./logos/${answers.text.toUpperCase().slice(0, 3)}.svg`, createLogo(answers, shape), (err) => {
             if (err) {
                 console.error(err);
             } else {
